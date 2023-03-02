@@ -1,0 +1,14 @@
+.slide {
+    font-size: 20px;
+    padding: 50% 8%;
+    float: left;
+}
+
+
+@media (min-width:400px) {
+    .slide {
+        font-size: 20px;
+        padding: 12.5% 15%;
+        float: left;
+    }
+}

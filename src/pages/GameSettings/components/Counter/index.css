@@ -1,0 +1,36 @@
+.counter {
+    padding: 3%;
+}
+
+.counter-button {
+    width: 32px;
+    height: 32px;
+    font-size: 23px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    margin: 0 2px;
+}
+
+.counter-buttons {
+    margin: 8px 0px ;
+}
+
+.counter-input {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 2%;
+    height: 15px;
+}
+
+@media (min-width:500px) {
+    .counter-input {
+        padding: 0.5%;
+    }    
+    .counter {
+        padding: 1.5%;
+    }
+}

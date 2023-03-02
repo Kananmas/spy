@@ -1,0 +1,16 @@
+.about-app{
+    margin: 14%;
+    border: 1px solid white;
+    border-radius: 14px;
+}
+
+@media (min-width:500px) {
+    .about-app{
+        border: 1px solid white;
+        border-radius: 14px;
+        margin: 8% 24%;
+    }
+    .spyicon {
+        margin: 14px;
+    }
+}

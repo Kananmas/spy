@@ -1,0 +1,20 @@
+.greeting-page {
+
+    color: white;
+    padding-top:3%;
+}
+
+.standard-button {
+    margin-top: 15%;
+}
+
+
+@media (min-width:400px) {
+    .greeting-page {
+    
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        background-color: black;
+        color: white;
+        padding: 10% 0%;
+    }
+}

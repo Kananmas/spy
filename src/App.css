@@ -1,0 +1,55 @@
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: black;
+  margin: 0%;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0%;
+}
+
+.standard-button {
+   background-color: black;
+   color: white;
+   font-weight: bold;
+   border: 1px solid white;
+   width: 140px;
+   height: 45px;
+   border-radius: 15px;
+}
+
+.standard-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.standard-button.disabled {
+  background-color: black;
+  color: white;
+  opacity: 50%;
+}
+
+.grid {
+  width: 100%;
+  min-height: 4%;
+}
+
+.grid .col-1 {
+  float: left;
+  width: calc(100% * 0.083);
+  height: 45px;
+}
+
+.icons {
+  font-size: 25px;
+}
+
+.spyicon {
+  width: 200px;
+  height: 200px;
+  margin: 5% 0%;
+  background-color: white;
+  border-radius: 50%;
+}

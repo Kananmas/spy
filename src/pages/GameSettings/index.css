@@ -1,0 +1,10 @@
+.title {
+    margin-top: 6.25%;
+  }
+  
+  @media (max-width:500px) {
+    .title {
+      margin-top: 13%;
+    }
+    
+  }
