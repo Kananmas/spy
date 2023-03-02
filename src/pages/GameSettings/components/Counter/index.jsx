@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useReducer } from "react";
 import "./index.css";
 
@@ -13,21 +14,25 @@ function counterReducer(state, action) {
 }
 
 export function Counter(props) {
-  const [value, dispatch] = useReducer(counterReducer, 0);
+  const [value, dispatch] = useReducer(counterReducer, props.minvalue);
 
   const handleOnClickPlus = () => {
-    dispatch({ type: "INCREASE" });
+    if (value < props.maxvalue) dispatch({ type: "INCREASE" });
   };
 
   const handleOnClickMinus = () => {
-    dispatch({ type: "DECREASE" });
+    if (value > props.minvalue) dispatch({ type: "DECREASE" });
   };
+
+  useEffect(() => {
+    props.setter(value);
+  }, [value]);
 
   return (
     <>
       <div className="counter">
         <h5>{props.title}</h5>
-        <input className="counter-input" value={value} readOnly />
+        <input className="standard-input" value={value} readOnly />
         <div className="counter-buttons">
           <button className="counter-button" onClick={handleOnClickPlus}>
             +

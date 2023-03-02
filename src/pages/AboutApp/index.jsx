@@ -7,7 +7,7 @@ export function AboutApp() {
   const commonRoutes = useCommonRoutes();
 
   return (
-    <>
+    <div className="about-app">
       <Menu>
         <div onClick={commonRoutes.home} className="menu-item">
           Home
@@ -20,7 +20,7 @@ export function AboutApp() {
         </div>
       </Menu>
 
-      <div className="about-app">
+      <div className="explanation">
         <p>
           This app is developed by kanan masajedi,as an project sample,that uses
           technologies as reactjs, redux, supabase
@@ -31,6 +31,6 @@ export function AboutApp() {
 
       <h3>Thank You</h3>
       <h5>For using this application</h5>
-    </>
+    </div>
   );
 }

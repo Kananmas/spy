@@ -1,15 +1,23 @@
-.about-app{
+.explanation{
     margin: 14%;
     border: 1px solid white;
     border-radius: 14px;
 }
 
+.about-app {
+    margin-top: 35%;
+}
+
 @media (min-width:500px) {
-    .about-app{
+    .explanation{
         border: 1px solid white;
         border-radius: 14px;
         margin: 8% 24%;
     }
+    .about-app {
+        margin-top: 5%;
+    }
+    
     .spyicon {
         margin: 14px;
     }
