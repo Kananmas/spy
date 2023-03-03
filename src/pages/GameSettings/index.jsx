@@ -14,7 +14,6 @@ import {
 // hooks
 
 import { useRef, useState } from "react";
-import { useCommonRoutes } from "../../hooks/commonroutes.hook";
 import { useDispatch, useSelector } from "react-redux";
 import { useMemo } from "react";
 import { useEffect } from "react";
@@ -24,7 +23,6 @@ import "./index.css";
 
 export function GameSettings() {
   // hooks
-  const commonRoutes = useCommonRoutes();
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
 
@@ -65,17 +63,7 @@ export function GameSettings() {
   };
   return (
     <>
-      <Menu>
-        <div onClick={commonRoutes.home} className="menu-item">
-          Home
-        </div>
-        <div onClick={commonRoutes.playOnline} className="menu-item">
-          Play Online
-        </div>
-        <div onClick={commonRoutes.playOffline} className="menu-item">
-          Play Offline
-        </div>
-      </Menu>
+      <Menu></Menu>
       <h2 className="title">Settings</h2>
       <Counter
         title="Player Count"

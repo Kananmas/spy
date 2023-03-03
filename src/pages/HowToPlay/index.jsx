@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { Button } from "../../components/Button";
 import { Menu } from "../../components/Menu";
-import { useCommonRoutes } from "../../hooks/commonroutes.hook";
 import { Slide } from "./components/Slide";
 import "./index.css";
 
 export function HowToPlay() {
   let [currentPage, setCurrentPage] = useState(1);
-  const commonRoutes = useCommonRoutes();
 
   const ToNextPage = () => {
     if (currentPage < 3) {
@@ -23,17 +21,7 @@ export function HowToPlay() {
 
   return (
     <>
-      <Menu>
-        <div onClick={commonRoutes.home} className="menu-item">
-          Home
-        </div>
-        <div onClick={commonRoutes.playOnline} className="menu-item">
-          Play Online
-        </div>
-        <div onClick={commonRoutes.playOffline} className="menu-item">
-          Play Offline
-        </div>
-      </Menu>
+      <Menu />
       <Slide index={1} currentPage={currentPage}>
         in this game we pick a random word,then the player will be divided into
         two groups citizens and spies,citizen are pepole who know the actual

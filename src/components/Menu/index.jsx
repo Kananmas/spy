@@ -2,6 +2,8 @@ import { useState } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { Else } from "../Else";
+import { If } from "../If";
 import "./index.css";
 
 export function Menu(props) {
@@ -18,6 +20,18 @@ export function Menu(props) {
       setDisplay("none");
     }
   };
+
+  function playOffline() {
+    history("/playoffline");
+  }
+
+  function playOnline() {
+    history("/playonline");
+  }
+
+  function goToHome() {
+    history("/home");
+  }
 
   const goToGameSettings = () => {
     history("/gamesettings");
@@ -43,7 +57,17 @@ export function Menu(props) {
             />
           </div>
         </div>
-        {props.children}
+        <If condition={!props.main}>
+          <div onClick={goToHome} className="menu-item">
+            Home
+          </div>
+          <div onClick={playOnline} className="menu-item">
+            Play Online
+          </div>
+          <div onClick={playOffline} className="menu-item">
+            Play Offline
+          </div>
+        </If>
         <div onClick={goToAboutApp} className="menu-item">
           About App
         </div>

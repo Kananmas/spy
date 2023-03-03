@@ -12,7 +12,7 @@ export function MainPage() {
 
   return (
     <div>
-      <Menu />
+      <Menu main={true} />
       <div className="button-group">
         <div>
           <Button onClick={goToHowToPlay}>How To Play</Button>
