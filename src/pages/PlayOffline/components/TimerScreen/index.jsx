@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useTimer } from "../../../../hooks/timer.hook";
 
 import { secondsToTimeString } from "./utils/seconds-to-string.utils";
+import { calculateTime } from "./utils/calculate-time.utils";
 import "./index.css";
 
 export const TimerScreen = () => {
@@ -37,10 +38,4 @@ export const TimerScreen = () => {
       <h3>Remaining Time</h3>
     </div>
   );
-};
-
-const calculateTime = (time) => {
-  let number = time.slice(0, time.indexOf("h"));
-
-  return Number(number) * 3600;
 };
