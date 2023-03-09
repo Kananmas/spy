@@ -10,6 +10,14 @@ export function MainPage() {
     history("/howtoplay");
   };
 
+  const playOnline = () => {
+    history("/playonline");
+  };
+
+  const playOffline = () => {
+    history("/playoffline");
+  };
+
   return (
     <div>
       <Menu main={true} />
@@ -19,10 +27,10 @@ export function MainPage() {
         </div>
 
         <div>
-          <Button>Play Offline</Button>
+          <Button onClick={playOffline}>Play Offline</Button>
         </div>
         <div>
-          <Button>Play Online</Button>
+          <Button onClick={playOnline}>Play Online</Button>
         </div>
       </div>
     </div>

@@ -8,3 +8,18 @@
     padding: 14px;
     border-radius: 14px;
 }
+
+
+@media (min-width:400px) {
+    .citizen-screen {
+        padding: 7% 0%;
+    }
+    
+    .keyword {
+        border: 1px solid white;
+        margin: 7% 25%;
+        padding: 14px;
+        border-radius: 14px;
+    }
+    
+}

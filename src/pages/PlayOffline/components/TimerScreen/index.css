@@ -2,3 +2,10 @@
     padding: 45% 0%;
     margin-top:50% ;
 }
+
+@media (min-width:400px) {
+    .time-screen {
+        padding: 15% 0%;
+        margin-top:6.25% ;
+    }
+}
