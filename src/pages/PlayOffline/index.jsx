@@ -16,7 +16,7 @@ import {
 } from "../../store/game/game.actions";
 // utils
 import { selectKeyword } from "./utils/select-key-word.utils";
-import { setSpies } from "./utils/set-spies.utils";
+import { setSpies } from "../../utils/set-spies.utils";
 import { TimerScreen } from "./components/TimerScreen";
 
 export function PlayOffline() {

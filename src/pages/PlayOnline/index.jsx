@@ -15,10 +15,18 @@ import "./index.css";
 export function PlayOnline() {
   const [rooms, setRooms] = useState([]);
   const [addingRoom, setAddingRoom] = useState(false);
+  const [roomAdded, setRoomAdded] = useState(true);
 
   useEffect(() => {
-    getRooms(setRooms);
-  }, []);
+    if (roomAdded) {
+      getRooms(setRooms);
+      setRoomAdded(false);
+    }
+  }, [roomAdded]);
+
+  const HandleOnClickCreateRoom = () => {
+    setAddingRoom(!addingRoom);
+  };
 
   return (
     <>
@@ -27,7 +35,7 @@ export function PlayOnline() {
       <div>
         <If condition={rooms.length}>
           {rooms.map((room) => {
-            return <Room key={randomString} {...room} />;
+            return <Room key={randomString()} {...room} />;
           })}
         </If>
         <Else condition={rooms.length}>
@@ -35,9 +43,15 @@ export function PlayOnline() {
         </Else>
       </div>
       <If condition={addingRoom}>
-        <RoomCreator />
+        <RoomCreator
+          handler={HandleOnClickCreateRoom}
+          roomAdded={roomAdded}
+          setter={setRoomAdded}
+        />
       </If>
-      <Button>Create Room</Button>
+      <If condition={!addingRoom}>
+        <Button onClick={HandleOnClickCreateRoom}>Create Room</Button>
+      </If>
     </>
   );
 }
