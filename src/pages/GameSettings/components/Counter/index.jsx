@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useReducer } from "react";
+import { Input } from "../../../../components/Input";
 import "./index.css";
 
 function counterReducer(state, action) {
@@ -32,7 +33,7 @@ export function Counter(props) {
     <>
       <div className="counter">
         <h5>{props.title}</h5>
-        <input className="standard-input" value={value} readOnly />
+        <Input value={value} readOnly />
         <div className="counter-buttons">
           <button className="counter-button" onClick={handleOnClickPlus}>
             +

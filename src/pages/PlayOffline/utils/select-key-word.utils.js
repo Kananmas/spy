@@ -1,4 +1,4 @@
-import { keyWords } from "../../../utilis/key-words.utils";
+import { keyWords } from "../../../utils/key-words.utils";
 
 export function selectKeyword() {
     const randomIndex = Math.floor(Math.random() * keyWords.length)

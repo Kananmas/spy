@@ -1,0 +1,14 @@
+.room-slot {
+    border: 1px solid white;
+    margin: 10% 5%;
+    padding: 0px 13px;
+    border-radius: 14px;
+}
+
+.card {
+    text-align: center;
+}
+
+table {
+    width: 90%;
+}

@@ -13,13 +13,12 @@ import {
 
 // hooks
 
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useMemo } from "react";
-import { useEffect } from "react";
 
 // css
 import "./index.css";
+import { Input } from "../../components/Input";
 
 export function GameSettings() {
   // hooks
@@ -85,9 +84,8 @@ export function GameSettings() {
       />
       <div>
         <h5>Username</h5>
-        <input
+        <Input
           placeholder={userName.current}
-          className="standard-input"
           onChange={handleOnUsernameChange}
           ref={userName}
         />

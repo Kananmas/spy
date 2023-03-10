@@ -1,0 +1,10 @@
+h2 {
+    margin-top: 75px;
+}
+
+.message {
+    border: 1px solid white;
+    padding: 14px;
+    margin: 0 12%;
+    border-radius: 14px;
+}
