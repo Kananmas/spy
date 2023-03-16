@@ -11,37 +11,31 @@ import { RoomCreator } from "./components/RoomCreator";
 import { Else } from "../../components/Else";
 
 import "./index.css";
+import { createChannel } from "./utils/create-channel.utils";
+import { useNavigate } from "react-router-dom";
 
 export function PlayOnline() {
   const [rooms, setRooms] = useState([]);
   const [addingRoom, setAddingRoom] = useState(false);
   const [roomAdded, setRoomAdded] = useState(true);
+  const history = useNavigate();
 
   useEffect(() => {
-    if (roomAdded) {
-      getRooms(setRooms);
-      setRoomAdded(false);
-    }
-  }, [roomAdded]);
+    getRooms(setRooms);
+  }, []);
 
   const HandleOnClickCreateRoom = () => {
     setAddingRoom(!addingRoom);
   };
 
+  const JoinChannel = (name) => {
+    createChannel(name);
+    history("/playonline/playroom");
+  };
+
   return (
     <>
       <Menu />
-      <h2>Rooms</h2>
-      <div>
-        <If condition={rooms.length}>
-          {rooms.map((room) => {
-            return <Room key={randomString()} {...room} />;
-          })}
-        </If>
-        <Else condition={rooms.length}>
-          <h4 className="message">No Active Rooms Found</h4>
-        </Else>
-      </div>
       <If condition={addingRoom}>
         <RoomCreator
           handler={HandleOnClickCreateRoom}
@@ -50,6 +44,19 @@ export function PlayOnline() {
         />
       </If>
       <If condition={!addingRoom}>
+        <h2>Rooms</h2>
+        <div>
+          <If condition={rooms.length}>
+            {rooms.map((room) => {
+              return (
+                <Room key={randomString()} {...room} onClick={JoinChannel} />
+              );
+            })}
+          </If>
+          <Else condition={rooms.length}>
+            <h4 className="message">No Active Rooms Found</h4>
+          </Else>
+        </div>
         <Button onClick={HandleOnClickCreateRoom}>Create Room</Button>
       </If>
     </>

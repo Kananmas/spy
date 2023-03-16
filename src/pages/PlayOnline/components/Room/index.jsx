@@ -5,7 +5,7 @@ export function Room(props) {
   const { name, player_count: playerCount, time } = props;
 
   return (
-    <table className="room-slot">
+    <table className="room-slot" onClick={() => props.onClick(name)}>
       <tbody>
         <tr>
           <td>

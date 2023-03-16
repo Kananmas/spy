@@ -49,11 +49,13 @@ export function PlayOffline() {
 
   const handleOnClickNext = () => {
     changeMidScreenStatus();
-    if (playerScreen < gameSettings.playerCount) {
-      setPlayerScreen((playerScreen) => playerScreen + 1);
+    if (!midScreen) {
+      if (playerScreen < gameSettings.playerCount) {
+        setPlayerScreen((playerScreen) => playerScreen + 1);
+      }
     }
   };
-
+  console.log(playerScreen);
   const changeMidScreenStatus = () => {
     if (!midScreen) {
       setMidScreen(true);

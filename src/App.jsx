@@ -10,6 +10,7 @@ import { HowToPlay } from "./pages/HowToPlay";
 import { MainPage } from "./pages/MainPage";
 import { PlayOffline } from "./pages/PlayOffline";
 import { PlayOnline } from "./pages/PlayOnline";
+import { PlayRoom } from "./pages/PlayOnline/components/PlayRoom";
 function App() {
   return (
     <React.StrictMode>
@@ -21,7 +22,10 @@ function App() {
           <Route path="/gamesettings" element={<GameSettings />} />
           <Route path="/aboutapp" element={<AboutApp />} />
           <Route path="/playoffline" element={<PlayOffline />} />
-          <Route path="/playonline" element={<PlayOnline />} />
+          <Route path="/playonline">
+            <Route index element={<PlayOnline />} />
+            <Route path="/playonline/playroom" element={<PlayRoom />} />
+          </Route>
           <Route path="/" element={<Navigate to="/greeting" />} />
         </Routes>
       </Provider>

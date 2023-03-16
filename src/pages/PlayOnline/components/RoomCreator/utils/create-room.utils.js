@@ -5,7 +5,6 @@ export async function createRoom(data, setter) {
         const { error } = await supabase.from('rooms').insert(data);
 
         if (!error) {
-            console.log('here')
             setter(true);
         }
 
