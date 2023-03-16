@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { createChannel } from "./utils/create-channel.utils";
 
 export function PlayRoom() {
-  const [players, setPlayers] = useState([]);
-  const [mangaerPlayer, setManagerPlayer] = useState();
-  const [selectedPlayer, setSelectedPlayer] = useState();
-  const [channel, setChannel] = useState();
+  const onlinegame = useSelector((store) => store.online);
 
-  useEffect(() => {}, []);
+  createChannel(onlinegame.room);
 
   // create a channel that listens to subscribtions to channel then
   // if the count of users is bigger than player count in the room

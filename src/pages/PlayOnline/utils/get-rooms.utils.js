@@ -6,7 +6,6 @@ export async function getRooms(setter) {
         const { data } = await supabase.from('rooms').select();
 
         if (data.length) {
-            console.log(data)
             setter(data)
         }
     } catch (error) {

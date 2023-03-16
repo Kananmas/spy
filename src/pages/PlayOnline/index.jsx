@@ -11,13 +11,16 @@ import { RoomCreator } from "./components/RoomCreator";
 import { Else } from "../../components/Else";
 
 import "./index.css";
-import { createChannel } from "./utils/create-channel.utils";
+
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setRoomAction } from "../../store/online/online.actions";
 
 export function PlayOnline() {
   const [rooms, setRooms] = useState([]);
   const [addingRoom, setAddingRoom] = useState(false);
   const [roomAdded, setRoomAdded] = useState(true);
+  const dispatch = useDispatch();
   const history = useNavigate();
 
   useEffect(() => {
@@ -29,7 +32,7 @@ export function PlayOnline() {
   };
 
   const JoinChannel = (name) => {
-    createChannel(name);
+    dispatch(setRoomAction(name));
     history("/playonline/playroom");
   };
 
