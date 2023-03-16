@@ -1,18 +1,24 @@
 import { supabase } from "../../../../../services/supabase";
-
+import { store } from '../../../../../store'
+import { addPlayerAction } from "../../../../../store/online/online.actions";
 
 export function createChannel(name) {
     const channel = supabase.channel(name);
+    const dispatch = store.dispatch;
 
-    channel.on('broadcast', { event: 'join' }, ({ key, newPresences }) => {
-        console.log(key, newPresences)
+    channel.on('presence', { event: 'join' }, ({ key, newPresences }) => {
+
+        dispatch(addPlayerAction(newPresences));
+
+        console.log(store.getState().online)
+
     }).subscribe(async (status) => {
         if (status === 'SUBSCRIBED') {
-            const presenceTrackStatus = await channel.track({
-                user: 'user-1',
+            await channel.track({
+                user: localStorage.getItem('username'),
+                questions: [],
                 online_at: new Date().toISOString(),
             })
-            console.log(presenceTrackStatus)
         }
 
     })

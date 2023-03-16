@@ -10,7 +10,7 @@ const initialState = {
 export function onlineReducer(state = initialState, action) {
     switch (action.type) {
         case ADD_PLAYER:
-            state.players.push(action.paylaod);
+            state.players = state.players.concat(state.players, action.paylaod);
             return state;
         case REMOVE_PLAYER:
             state.players = state.players.filter((player) => player.name != action.paylaod)

@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useTimer } from "../../../../hooks/timer.hook";
 
-import { secondsToTimeString } from "./utils/seconds-to-string.utils";
-import { calculateTime } from "./utils/calculate-time.utils";
+import { secondsToTimeString } from "../../../../utils/seconds-to-string.utils";
+import { calculateTime } from "../../../../utils/calculate-time.utils";
 import "./index.css";
 
 export const TimerScreen = () => {
